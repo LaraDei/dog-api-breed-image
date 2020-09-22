@@ -13,7 +13,7 @@ function getDogImage() {
 function displayResults(responseJson) {
   console.log(responseJson);
   //replace the existing image with the new one
-  if( responseJson.error){
+  if( responseJson.code){
     alert('Something went wrong. Try a different breed.')
   }
   $('.results-img').replaceWith(

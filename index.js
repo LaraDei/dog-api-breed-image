@@ -13,14 +13,16 @@ function getDogImage() {
 function displayResults(responseJson) {
   console.log(responseJson);
   //replace the existing image with the new one
-  if( responseJson.code){
+  if(responseJson.code){
+    $('.results').addClass('hidden');
     alert('Something went wrong. Try a different breed.')
   }
-  $('.results-img').replaceWith(
+  else {$('.results-img').replaceWith(
     `<img src="${responseJson.message}" class="results-img">`
   )
   //display the results section
   $('.results').removeClass('hidden');
+  }
 }
 
 function watchForm() {
